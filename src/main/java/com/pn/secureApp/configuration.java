@@ -18,7 +18,7 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class configuration extends WebSecurityConfigurerAdapter {
-
+    // use secret123 to login
     private static final String ENCODED_PASSWORD = "$2a$10$AIUufK8g6EFhBcumRRV2L.AQNz3Bjp7oDQVFiO5JJMBFZQ6x2/R/2";
 
 //    @Bean
@@ -33,7 +33,10 @@ public class configuration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
-                .withUser("Parisa").password(ENCODED_PASSWORD).roles("ADMIN");
+                .withUser("Parisa")
+//                .password(ENCODED_PASSWORD)
+                .password(passwordEncoder().encode("secret"))
+                .roles("ADMIN");
     }
 
 
