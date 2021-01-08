@@ -6,6 +6,5 @@
     There are two ways to provides user and password:
     - override UserDetailsService, which requires using withDefaultPasswordEncoder() that is a deprecated method, and you will be exposing the password.
     - using PasswordEncoder which BCrypt the password.
-    <br /> instead of using ENCODED_PASSWORD as encrypted password for secret. 
     <br />for demo purpose I kept both code.
     

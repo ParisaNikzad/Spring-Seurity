@@ -18,7 +18,7 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class configuration extends WebSecurityConfigurerAdapter {
-    // use secret123 to login
+    // use secret to login
     private static final String ENCODED_PASSWORD = "$2a$10$eyRbDkXVOFBdstIXp2CCBuIhOgtrfdcQXF2buoUJjuO8oKT0ZEZ4K";
 
 //    @Bean
