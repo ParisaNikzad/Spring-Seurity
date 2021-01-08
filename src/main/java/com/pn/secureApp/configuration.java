@@ -25,7 +25,7 @@ public class configuration extends WebSecurityConfigurerAdapter {
 //    @Override
 //    protected UserDetailsService userDetailsService() {
 //        List<UserDetails> users = new ArrayList<>();
-//        users.add(User.withDefaultPasswordEncoder().username("Parisa").password("1234").roles("ADMIN").build());
+//        users.add(User.withDefaultPasswordEncoder().username("parisa").password("1234").roles("ADMIN").build());
 //        return new InMemoryUserDetailsManager(users);
 //    }
 
@@ -33,8 +33,9 @@ public class configuration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
-                .withUser("Parisa")
+                .withUser("parisa")
                 .password(ENCODED_PASSWORD)
+//                .password(passwordEncoder().encode("1234"))  // To pass decrypted password
                 .roles("ADMIN");
     }
 
