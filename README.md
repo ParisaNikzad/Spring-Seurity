@@ -8,3 +8,5 @@
     - using PasswordEncoder which BCrypt the password.
     <br />for demo purpose I kept both code.
     
+    
+we can also add user password into application.properties but this will not be valid as long as the configuration class exist. 
